@@ -1,10 +1,29 @@
+import { lazy } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import Home from './pages/Home';
-import Dogs from './pages/Dogs';
-import DogDetails from './pages/DogDetails';
+// import Home from './pages/Home';
+// import Dogs from './pages/Dogs';
+// import DogDetails from './pages/DogDetails';
 import { Layout } from 'components/AppStudy/componentsStudy/Layout';
-import { Gallery } from './componentsStudy/Gallery';
-import { Subbreeds } from './componentsStudy/Subbreeds';
+// import { Gallery } from './componentsStudy/Gallery';
+// import { Subbreeds } from './componentsStudy/Subbreeds';
+
+const Home = lazy(() => import('./pages/Home'));
+const Dogs = lazy(() => import('./pages/Dogs'));
+const DogDetails = lazy(() => import('./pages/DogDetails'));
+
+const Gallery = lazy(() =>
+  import('./componentsStudy/Gallery').then(module => ({
+    ...module,
+    default: module.Gallery,
+  }))
+);
+
+const Subbreeds = lazy(() =>
+  import('./componentsStudy/Subbreeds').then(module => ({
+    ...module,
+    default: module.Subbreeds,
+  }))
+);
 
 export const AppStudy = () => {
   return (
