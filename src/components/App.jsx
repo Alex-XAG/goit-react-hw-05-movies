@@ -6,7 +6,7 @@ import Home from 'Pages/Home';
 import { Cast } from './Cast/Cast';
 import { Reviews } from './Reviews/Reviews';
 
-const API_KEY = 'fcd230550d5bc22e169a178a7e9d550c';
+// const API_KEY = 'fcd230550d5bc22e169a178a7e9d550c';
 
 export const App = () => {
   return (
@@ -23,10 +23,11 @@ export const App = () => {
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="/movies" element={<Movies />} />
-          <Route path="/mavies/:moviesId" element={<MoviesDetails />}>
+          <Route path="/movies/:moviesId" element={<MoviesDetails />}>
             <Route path="cast" element={<Cast />} />
             <Route path="reviews" element={<Reviews />} />
           </Route>
+          <Route path="*" element={<p>Not found</p>} />
         </Route>
       </Routes>
     </div>

@@ -1,5 +1,5 @@
 const Movies = () => {
-  return <></>;
+  return <p>Movies</p>;
 };
 
 export default Movies;
