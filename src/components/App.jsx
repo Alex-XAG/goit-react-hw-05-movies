@@ -1,10 +1,10 @@
 import { Routes, Route } from 'react-router-dom';
 import { Layout } from './Layout/Layout';
 import Movies from 'Pages/Movies';
-import { MoviesDetails } from './MoviesDetails/MoviesDetails';
 import Home from 'Pages/Home';
 import { Cast } from './Cast/Cast';
 import { Reviews } from './Reviews/Reviews';
+import MoviesDetails from 'Pages/MoviesDetails/MoviesDetails';
 
 // const API_KEY = 'fcd230550d5bc22e169a178a7e9d550c';
 
