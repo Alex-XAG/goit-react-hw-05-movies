@@ -15,7 +15,6 @@ export const Cast = () => {
       await fetch(`${BASE_URL}${moviesId}/credits?${API_KEY}&language=en-US`)
         .then(response => response.json())
         .then(castData => {
-          console.log(castData.cast);
           setCasts(castData.cast);
         })
         .catch(err => console.error(err));

@@ -20,7 +20,6 @@ export const Reviews = () => {
       await fetch(`${BASE_URL}${moviesId}/reviews?${API_KEY}&language=en-US`)
         .then(response => response.json())
         .then(reviewsData => {
-          console.log(reviewsData);
           setReviews(reviewsData.results);
         })
         .catch(err => console.error(err));

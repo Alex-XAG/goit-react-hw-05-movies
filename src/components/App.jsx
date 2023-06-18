@@ -1,12 +1,25 @@
 import { Routes, Route } from 'react-router-dom';
 import { Layout } from './Layout/Layout';
-import Movies from 'Pages/Movies/Movies';
-import Home from 'Pages/Home/Home';
-import { Cast } from './Cast/Cast';
-import { Reviews } from './Reviews/Reviews';
-import MoviesDetails from 'Pages/MoviesDetails/MoviesDetails';
+import { lazy } from 'react';
 
-// const API_KEY = 'fcd230550d5bc22e169a178a7e9d550c';
+const Home = lazy(() => import('../Pages/Home/Home'));
+const Movies = lazy(() => import('../Pages/Movies/Movies'));
+const MoviesDetails = lazy(() =>
+  import('../Pages/MoviesDetails/MoviesDetails')
+);
+
+const Cast = lazy(() =>
+  import('./Cast/Cast').then(module => ({
+    ...module,
+    default: module.Cast,
+  }))
+);
+const Reviews = lazy(() =>
+  import('./Reviews/Reviews').then(module => ({
+    ...module,
+    default: module.Reviews,
+  }))
+);
 
 export const App = () => {
   return (
