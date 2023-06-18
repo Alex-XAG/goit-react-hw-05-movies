@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 export const MoviesList = styled.ul`
   display: flex;
@@ -52,7 +52,7 @@ export const MoviesButton = styled.button`
   }
 `;
 
-export const MoviesLink = styled(Link)`
+export const MoviesLink = styled(NavLink)`
   text-decoration: none;
   color: black;
   border-radius: 10px;

@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 export const HomeList = styled.ul`
   display: flex;
@@ -19,7 +19,7 @@ export const HomeTitle = styled.h1`
   font-size: 40px;
 `;
 
-export const HomeLink = styled(Link)`
+export const HomeLink = styled(NavLink)`
   text-decoration: none;
   color: black;
   border-radius: 10px;
