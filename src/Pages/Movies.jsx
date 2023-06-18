@@ -9,12 +9,14 @@ const Movies = () => {
   const [movies, setMovies] = useState([]);
   const location = useLocation();
 
-  // const [searchParams, setSearchParams] = useSearchParams();
-  // const movieStr = searchParams.get('movieStr') ?? '';
+  const [searchParams, setSearchParams] = useSearchParams();
+  const movieStr = searchParams.get(query) ?? '';
 
   useEffect(() => {
     const getMoviesByQuery = () =>
-      fetch(`${BASE_URL}?${API_KEY}&include_adult=false&language=en-US&page=1`)
+      fetch(
+        `${BASE_URL}?${API_KEY}&query=${query}&include_adult=false&language=en-US&page=1`
+      )
         .then(response => response.json())
         .then(data => {
           console.log(data);
@@ -22,16 +24,18 @@ const Movies = () => {
         })
         .catch(err => console.error(err));
     getMoviesByQuery();
-  }, []);
+  }, [query]);
 
   const updateQueryString = evt => {
+    console.log(evt.target.value);
     const movieStrValue = evt.target.value;
-    // if (movieStrValue === '') {
-    //   return setSearchParams({});
-    // }
-    setQuery({ movieStrValue });
+    setQuery(movieStrValue);
+    if (movieStrValue === '') {
+      return setSearchParams({});
+    }
+    setSearchParams({ query: movieStrValue });
   };
-  const visibleMovies = movies.filter(movie => movie.includes(query));
+
   return (
     <div>
       <form>
@@ -39,7 +43,7 @@ const Movies = () => {
         <button>search</button>
       </form>
       <ul>
-        {visibleMovies.map(movie => {
+        {movies.map(movie => {
           return (
             <li key={movie.id}>
               <Link to={`${movie.id}`} state={{ from: location }}>
