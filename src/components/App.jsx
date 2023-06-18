@@ -1,7 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 import { Layout } from './Layout/Layout';
-import Movies from 'Pages/Movies';
-import Home from 'Pages/Home';
+import Movies from 'Pages/Movies/Movies';
+import Home from 'Pages/Home/Home';
 import { Cast } from './Cast/Cast';
 import { Reviews } from './Reviews/Reviews';
 import MoviesDetails from 'Pages/MoviesDetails/MoviesDetails';
@@ -15,7 +15,7 @@ export const App = () => {
         height: '100vh',
         display: 'flex',
         justifyContent: 'center',
-        fontSize: 40,
+        fontSize: 20,
         color: '#010101',
       }}
     >
