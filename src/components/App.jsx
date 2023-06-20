@@ -1,30 +1,30 @@
 import { Routes, Route } from 'react-router-dom';
 import { Layout } from './Layout/Layout';
-import { lazy } from 'react';
-// import Home from 'Pages/Home/Home';
-// import Movies from 'Pages/Movies/Movies';
-// import MoviesDetails from 'Pages/MoviesDetails/MoviesDetails';
-// import { Cast } from './Cast/Cast';
-// import { Reviews } from './Reviews/Reviews';
+// import { lazy } from 'react';
+import Home from 'Pages/Home/Home';
+import Movies from 'Pages/Movies/Movies';
+import MoviesDetails from 'Pages/MoviesDetails/MoviesDetails';
+import { Cast } from './Cast/Cast';
+import { Reviews } from './Reviews/Reviews';
 
-const Home = lazy(() => import('../Pages/Home/Home'));
-const Movies = lazy(() => import('../Pages/Movies/Movies'));
-const MoviesDetails = lazy(() =>
-  import('../Pages/MoviesDetails/MoviesDetails')
-);
+// const Home = lazy(() => import('../Pages/Home/Home'));
+// const Movies = lazy(() => import('../Pages/Movies/Movies'));
+// const MoviesDetails = lazy(() =>
+//   import('../Pages/MoviesDetails/MoviesDetails')
+// );
 
-const Cast = lazy(() =>
-  import('./Cast/Cast').then(module => ({
-    ...module,
-    default: module.Cast,
-  }))
-);
-const Reviews = lazy(() =>
-  import('./Reviews/Reviews').then(module => ({
-    ...module,
-    default: module.Reviews,
-  }))
-);
+// const Cast = lazy(() =>
+//   import('./Cast/Cast').then(module => ({
+//     ...module,
+//     default: module.Cast,
+//   }))
+// );
+// const Reviews = lazy(() =>
+//   import('./Reviews/Reviews').then(module => ({
+//     ...module,
+//     default: module.Reviews,
+//   }))
+// );
 
 export const App = () => {
   return (
