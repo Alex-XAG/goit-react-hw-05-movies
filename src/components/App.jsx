@@ -7,11 +7,9 @@ import { lazy } from 'react';
 // import { Cast } from './Cast/Cast';
 // import { Reviews } from './Reviews/Reviews';
 
-const Home = lazy(() => import('../Pages/Home/Home'));
-const Movies = lazy(() => import('../Pages/Movies/Movies'));
-const MoviesDetails = lazy(() =>
-  import('../Pages/MoviesDetails/MoviesDetails')
-);
+const Home = lazy(() => import('pages/Home/Home'));
+const Movies = lazy(() => import('pages/Movies/Movies'));
+const MoviesDetails = lazy(() => import('pages/MoviesDetails/MoviesDetails'));
 
 const Cast = lazy(() =>
   import('./Cast/Cast').then(module => ({
