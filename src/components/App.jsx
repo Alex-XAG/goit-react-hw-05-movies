@@ -1,5 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
-import { Layout } from './Layout/Layout';
+import { Layout } from 'components/Layout/Layout';
 import { lazy } from 'react';
 // import Home from 'Pages/Home/Home';
 // import Movies from 'Pages/Movies/Movies';
