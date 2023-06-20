@@ -8,8 +8,8 @@ import { Layout } from 'components/AppStudy/componentsStudy/Layout';
 // import { Subbreeds } from './componentsStudy/Subbreeds';
 
 const Home = lazy(() => import('./'));
-const Dogs = lazy(() => import('./pages/Dogs'));
-const DogDetails = lazy(() => import('./pages/DogDetails'));
+const Dogs = lazy(() => import('./pagesStudy/Dogs'));
+const DogDetails = lazy(() => import('./pagesStudy/DogDetails'));
 
 const Gallery = lazy(() =>
   import('./componentsStudy/Gallery').then(module => ({
