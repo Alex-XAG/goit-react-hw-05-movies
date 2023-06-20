@@ -12,13 +12,13 @@ const Movies = lazy(() => import('pages/Movies/Movies'));
 const MoviesDetails = lazy(() => import('pages/MoviesDetails/MoviesDetails'));
 
 const Cast = lazy(() =>
-  import('./Cast/Cast').then(module => ({
+  import('./components/Cast/Cast').then(module => ({
     ...module,
     default: module.Cast,
   }))
 );
 const Reviews = lazy(() =>
-  import('./Reviews/Reviews').then(module => ({
+  import('./components/Reviews/Reviews').then(module => ({
     ...module,
     default: module.Reviews,
   }))

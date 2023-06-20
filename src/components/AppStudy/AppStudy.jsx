@@ -7,7 +7,7 @@ import { Layout } from 'components/AppStudy/componentsStudy/Layout';
 // import { Gallery } from './componentsStudy/Gallery';
 // import { Subbreeds } from './componentsStudy/Subbreeds';
 
-const Home = lazy(() => import('./pages/Home'));
+const Home = lazy(() => import('./'));
 const Dogs = lazy(() => import('./pages/Dogs'));
 const DogDetails = lazy(() => import('./pages/DogDetails'));
 
