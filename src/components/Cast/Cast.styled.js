@@ -7,7 +7,7 @@ export const CastList = styled.ul`
   justify-content: center;
   align-items: center;
   list-style: none;
-  width: 1200px;
+  width: 100%;
   margin: 0;
   padding: 0;
 `;
@@ -15,12 +15,9 @@ export const CastList = styled.ul`
 export const CastItem = styled.li`
   display: flex;
   flex-direction: column;
-
   align-items: center;
   padding: 5px;
   gap: 20px;
-  width: 200px;
-  height: 420px;
 `;
 
 export const CastTitle = styled.h3`

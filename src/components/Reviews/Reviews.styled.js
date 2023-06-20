@@ -2,13 +2,14 @@ import styled from '@emotion/styled';
 
 export const ReviewsList = styled.ul`
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
+  align-items: center;
   list-style: none;
-  width: 1200px;
+  width: 100%;
   margin: 0;
-  padding: 0 20px;
+  padding: 0;
 `;
 
 export const ReviewsItem = styled.li`

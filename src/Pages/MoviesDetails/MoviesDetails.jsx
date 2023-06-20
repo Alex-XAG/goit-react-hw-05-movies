@@ -1,4 +1,4 @@
-import { Suspense, useEffect, useState } from 'react';
+import { Suspense, useEffect, useRef, useState } from 'react';
 import { Outlet, useLocation, useParams } from 'react-router-dom';
 import {
   DetailsArticle,
@@ -21,11 +21,10 @@ const MoviesDetails = () => {
   const [genres, setGenres] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
-  const { moviesId } = useParams();
-  const { backdrop_path, original_title, overview } = movieDetails;
-
   const location = useLocation();
-  const goBackLink = location?.state?.from || '/';
+  const goBackLink = useRef(location?.state?.from ?? '/');
+  const { moviesId } = useParams();
+  const { poster_path, original_title, overview } = movieDetails;
 
   useEffect(() => {
     setIsLoading(true);
@@ -52,20 +51,33 @@ const MoviesDetails = () => {
 
   return (
     <MovieDetailsContainer>
-      <DetailsLink to={goBackLink}>Back to the page colletction</DetailsLink>
-      <DetailsSection>
-        <div>
-          <img src={`${IMG_BASE_URL}${backdrop_path}`} alt={original_title} />
-        </div>
-        <DetailsArticle>
-          <DetailsTitle>{original_title}</DetailsTitle>
-          <DetailsText>User score: ???</DetailsText>
-          <DetailsSubTitle>Overview</DetailsSubTitle>
-          <DetailsText>{overview}</DetailsText>
-          <DetailsSubTitle>Genres</DetailsSubTitle>
-          <DetailsText>{genres}</DetailsText>
-        </DetailsArticle>
-      </DetailsSection>
+      <DetailsLink to={goBackLink.current}>
+        Back to the page colletction
+      </DetailsLink>
+      {movieDetails.success === false ? (
+        <h2>Not found results, please, try another film</h2>
+      ) : (
+        <DetailsSection>
+          <div>
+            <img
+              src={
+                `${IMG_BASE_URL}${poster_path}` ??
+                'https://via.placeholder.com/500x750'
+              }
+              alt={original_title}
+              width="500"
+            />
+          </div>
+          <DetailsArticle>
+            <DetailsTitle>{original_title}</DetailsTitle>
+            <DetailsText>User score: ???</DetailsText>
+            <DetailsSubTitle>Overview</DetailsSubTitle>
+            <DetailsText>{overview}</DetailsText>
+            <DetailsSubTitle>Genres</DetailsSubTitle>
+            <DetailsText>{genres}</DetailsText>
+          </DetailsArticle>
+        </DetailsSection>
+      )}
 
       <DetailsList>
         <li>
