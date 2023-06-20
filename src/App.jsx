@@ -1,7 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 import { Layout } from 'components/Layout/Layout';
 // import { lazy } from 'react';
-import Home from './pages/Home/Home';
+import Home from 'pages/Home/Home';
 import Movies from 'pages/Movies/Movies';
 import MoviesDetails from 'pages/MoviesDetails/MoviesDetails';
 import { Cast } from 'components/Cast/Cast';
